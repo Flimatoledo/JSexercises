@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Inflação</title>
+</head>
+
+<body>
+  <script>
+
+    var tomate24 = 3.3
+    var tomate30 = 4.7
+    var arroz24 = 2.99
+    var arroz30 = 3.25
+    var cenoura24 = 3.99
+    var cenoura30 = 4.14
+
+
+    function pulaLinha() {
+      document.write("<br>")
+    }
+
+    function calcIndividual(valorInicial, valorFinal) {
+    pulaLinha()
+    return (valorFinal - valorInicial) / valorInicial * 100
+    }
+
+    document.write("A inflação do tomate é de " + calcIndividual(tomate24, tomate30).toFixed(2) + "%.")
+    document.write("A inflação do arroz é de " + calcIndividual(arroz24, arroz30).toFixed(2) + "%.")
+    document.write("A inflação da cenoura é de " + calcIndividual(cenoura24, cenoura30).toFixed(2) + "%.")
+
+    function calcMedia() {
+
+      var inflacaoTomate = calcIndividual(tomate24, tomate30)
+      var inflacaoArroz = calcIndividual(arroz24, arroz30)
+      var inflacaoCenoura = calcIndividual(cenoura24, cenoura30)
+
+      return (inflacaoTomate + inflacaoArroz + inflacaoCenoura) / 3
+    }
+
+    document.write("A média das inflações é de " + calcMedia().toFixed(2) + "%.")
+
+    pulaLinha()
+
+    function calcPrevisao(valorInicial, valorFinal) {
+
+      pulaLinha()
+      return (valorFinal - valorInicial) / 6
+    }
+
+    document.write("A previsão de inflação do tomate é de " + calcPrevisao(tomate24, tomate30).toFixed(2) + " centavos por dia.")
+    document.write("A previsão de inflação do arroz é de " + calcPrevisao(arroz24, arroz30).toFixed(2) + " centavos por dia.")
+    document.write("A previsão de inflação da cenoura é de " + calcPrevisao(cenoura24, cenoura30).toFixed(2) + " centavos por dia.");
+
+  </script>
+
+</body>
+
+</html>

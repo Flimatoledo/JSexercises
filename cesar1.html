@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resilia | Cifra de Cesar </title>
+</head>
+<body>
+    
+
+    <script>
+
+        function cifra(deslocamento, frase, intervalo) {
+
+            var fraseAlterada = "";
+            var juntaStr = [];
+            
+            for (var i = 0; i < frase.length; i++) {
+
+               juntaStr.push((frase.charCodeAt(i) + deslocamento)%126);
+               
+               fraseAlterada += String.fromCharCode(juntaStr[i]);
+               
+               console.log(fraseAlterada);
+            }
+            
+            return fraseAlterada;
+
+        }
+
+
+        var mensagemLida = prompt("Mensagem a ser incriptada: ");
+        var deslocamentoRequerido = parseInt(prompt("Digite um número: ")); 
+
+        cifra(deslocamentoRequerido, mensagemLida);
+
+    </script>
+
+</body>
+</html>
